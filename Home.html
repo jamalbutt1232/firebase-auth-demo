@@ -1,1 +1,48 @@
 <h1>Pakistan</h1>
+<script type="module">
+  // Import Firebase SDK
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+  import {
+    getDatabase,
+    ref,
+    set,
+    onValue,
+  } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  function writeUserData(userId, email) {
+    set(ref(db, "users/" + userId), {
+      userId: userId,
+      email: email,
+    });
+  }
+
+  // Listening for changes in 'users' table
+  const usersRef = ref(db, "users");
+  onValue(usersRef, (snapshot) => {
+    const data = snapshot.val();
+    console.log(data); // Printing the data
+    // Update your UI here based on the data
+  });
+
+  //   const starCountRef = ref(db, "users/");
+  //   onValue(starCountRef, (snapshot) => {
+  //     const data = snapshot.val();
+  //     updateStarCount(postElement, data);
+  //   });
+
+  console.log("Running");
+</script>

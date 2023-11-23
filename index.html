@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="auth.js" type="module"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        width: 300px;
+      }
+
+      .form-container label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      }
+
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      .form-container button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Sign Up</h1>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" />
+        <label for="password">Password</label>
+        <input id="password" type="password" />
+        <button id="signup">Sign up</button>
+        <br />
+        <button id="signin">Sign In</button>
+      </div>
+    </div>
+  </body>
+</html>
